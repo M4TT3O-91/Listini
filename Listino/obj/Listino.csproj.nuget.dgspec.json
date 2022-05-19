@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\student\\source\\repos\\New folder\\Listino\\Listino.csproj": {}
+    "C:\\Users\\student\\source\\repos\\Listini\\Listino\\Listino.csproj": {}
   },
   "projects": {
-    "C:\\Users\\student\\source\\repos\\New folder\\Listino\\Listino.csproj": {
+    "C:\\Users\\student\\source\\repos\\Listini\\Listino\\Listino.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\student\\source\\repos\\New folder\\Listino\\Listino.csproj",
+        "projectUniqueName": "C:\\Users\\student\\source\\repos\\Listini\\Listino\\Listino.csproj",
         "projectName": "Listino",
-        "projectPath": "C:\\Users\\student\\source\\repos\\New folder\\Listino\\Listino.csproj",
+        "projectPath": "C:\\Users\\student\\source\\repos\\Listini\\Listino\\Listino.csproj",
         "packagesPath": "C:\\Users\\student\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\student\\source\\repos\\New folder\\Listino\\obj\\",
+        "outputPath": "C:\\Users\\student\\source\\repos\\Listini\\Listino\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\student\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -51,8 +51,18 @@
               "version": "[6.0.5, )"
             },
             "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
               "target": "Package",
               "version": "[6.0.5, )"
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[6.0.5, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.3.1, )"
             }
           },
           "imports": [
