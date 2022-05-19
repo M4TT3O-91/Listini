@@ -5,16 +5,53 @@
 
 <div class="text-center">
     <h1>Product Page</h1>
-    
-    <input class="button" type="button" value="Aggiungi" onclick="@("window.location.href='" + @Url.Action("addproduct", "ProductController") + "'");" />
+
+    <input class="button" type="button" value="Aggiungi" onclick="@("window.location.href='" + @Url.Action("addproduct", "Product") + "'");" />
     <h2>Prodotti Salvati:</h2>
-    <ul>
-        @foreach (var prod in ViewBag.ProductList)
-    {
-        <li>Codice: @prod.C8 - @prod.Titolo - @prod.Descrizione <a href="@prod.Link">link</a></li>
-    }
-    </ul>
-    
-    
+    <div class="tableContainer">
+        <table>
+            <tr>
+                <th>Codice</th>
+                <th>Titolo</th>
+                <th>Descrizione</th>
+                <th>Link</th>
+            </tr>
+
+            @foreach (var prod in ViewBag.ProductList)
+            {
+                <tr>
+                    <td>@prod.C8</td>
+                    <td>@prod.Titolo</td>
+                    <td>@prod.Descrizione</td>
+                    <td><a href="@prod.Link">link</a></td>
+                </tr>
+            }
+        </table>
+    </div>
+
+
+
+
 </div>
+
+<style>
+    .tableContainer {
+        display: flex;
+        justify-content: center;
+    }
+
+    table {
+        border: 1px solid black;
+        text-align: center;
+    }
+
+        table th, td, tr {
+            border: 1px solid black;
+        }
+
+        table td {
+            padding: 20px;
+        }
+
+</style>
 

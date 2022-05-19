@@ -1,12 +1,21 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
+﻿@{
+    if (IsPost)
+    {
+        string companyname = Request.Form["companyname"];
+        string contactname = Request.Form["contactname"];
+        int employeecount = Request.Form["employees"].AsInt();
 
+        <text>
+            You entered: <br />
+            Company Name: @companyname <br />
+            Contact Name: @contactname <br />
+            Employee Count: @employeecount <br />
+        </text>
+    }
 }
 <div>
     <h1 class="title">Inserisci un nuovo Prodotto</h1>
-    <form method="post">
+    <form method="post" onsubmit="insertProduct()">
         <label for="inputC8">Codice Prodotto</label>
         <input class="input-group" id="inputC8" type="text" placeholder="inserisci un prodotto..." />
 
@@ -19,7 +28,32 @@
         <label for="inputLink">Link</label>
         <input class="input-group" id="inputLink" type="text" placeholder="inserisci link prodotto..." />
 
-        <input type="submit" value="Submit" class="submit" />
+        <input id="SubmitButton" type="submit" value="Submit" class="submit" />
+        <input id="BackButton" class="button" type="button" value="Indietro" onclick="@("window.location.href='" + @Url.Action("index", "Product") + "'");" />
     </form>
 </div>
 
+<style>
+    #SubmitButton, #BackButton {
+        margin-top: 10px;
+        margin-left: 10px;
+        justify-content: center;
+        height: 40px;
+        width: 100px;
+    }
+
+    #BackButton {
+        background-color: darkgray;
+    }
+
+    #SubmitButton {
+        color: white;
+        background-color: blue;
+    }
+</style>
+
+<script>
+    function insertProduct(){
+        window.location.href = '@Url.Action("InsertProduct", "Product")';
+    }
+</script>
