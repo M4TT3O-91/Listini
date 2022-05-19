@@ -1,4 +1,9 @@
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using Listino.Data;
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddDbContext<ListinoContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("ListinoContext") ?? throw new InvalidOperationException("Connection string 'ListinoContext' not found.")));
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
