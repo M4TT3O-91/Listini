@@ -1,0 +1,20 @@
+﻿@{
+    ViewData["Title"] = "Product Page";
+}
+
+
+<div class="text-center">
+    <h1>Product Page</h1>
+    
+    <input class="button" type="button" value="Aggiungi" onclick="@("window.location.href='" + @Url.Action("addproduct", "ProductController") + "'");" />
+    <h2>Prodotti Salvati:</h2>
+    <ul>
+        @foreach (var prod in ViewBag.ProductList)
+    {
+        <li>Codice: @prod.C8 - @prod.Titolo - @prod.Descrizione <a href="@prod.Link">link</a></li>
+    }
+    </ul>
+    
+    
+</div>
+
